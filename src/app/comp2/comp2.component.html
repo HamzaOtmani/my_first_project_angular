@@ -1,0 +1,65 @@
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+
+<style>
+    table, th , td  {
+      border: 4px solid black;
+    }
+  </style>
+
+
+
+<div class='card' *ngIf="data.length>0">
+<table class='table'>
+
+    <thead>
+        <tr>
+            <th> nom </th>
+            <th> prénom </th>
+            <th> age</th>
+        </tr>
+    </thead>
+
+    <tr *ngFor="let d of data">
+        <td> {{d.nom}}</td> 
+        <td> {{d.prenom}}</td> 
+        <td> {{d.age}}</td> 
+    </tr>
+
+
+</table>
+
+<div class='card' *ngIf='data.length>=3'> 
+    <p> il existe au moins 3 elements dans la table </p>
+  </div>
+
+</div>
+
+
+<br>
+
+<button type="button" class="btn btn-danger"(click)=getMessage()> save </button>
+<input type="text" class="form-control" [(ngModel)]="Message"  >
+ {{Message}}
+
+
+
+ <br>
+<button type="button"  (click)="gotoUser()">gotouser
+</button>
+
+
+<div class="row">
+
+  <div [ngSwitch]="name">
+  <div *ngSwitchCase="'khalid'">Wecome khalid</div>
+  <div *ngSwitchCase="'Hamza'">Wecome Hamza</div>
+
+  </div>
+</div> 
+
+</body>
